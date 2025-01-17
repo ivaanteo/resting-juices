@@ -28,4 +28,7 @@
   h5 {
     @apply text-lg;
   }
+  p {
+    @apply text-lg
+  }
 }

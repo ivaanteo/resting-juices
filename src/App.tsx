@@ -1,10 +1,17 @@
+import ContactSection from "./sections/ContactSection";
+import DiningSection from "./sections/DiningSection";
+import IntroSection from "./sections/IntroSection";
+import MenuSection from "./sections/MenuSection";
+
 function App() {
   return (
-    <div className="max-w-[1280px] mx-auto p-8 text-center">
-      <h1>hello, i'm azure</h1>
-      <p>I'm a private chef based in Singapore</p>
-    </div>
-  )
+    <>
+      <IntroSection />
+      <DiningSection />
+      <MenuSection />
+      <ContactSection />
+    </>
+  );
 }
 
-export default App
+export default App;
