@@ -1,5 +1,5 @@
 import menuGroup from "../assets/menugroup.png";
-import Button from "../components/button";
+import Button from "../components/StyledButton";
 
 export default function MenuSection() {
   return (

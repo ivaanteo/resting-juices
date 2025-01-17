@@ -1,5 +1,5 @@
 import wine from "../assets/wine.jpeg";
-import Button from "../components/button";
+import Button from "../components/StyledButton";
 
 export default function DiningSection() {
   return (

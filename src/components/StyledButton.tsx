@@ -1,12 +1,10 @@
-import React from "react";
-
 interface ButtonProps {
   text: string;
   className: string;
   onClick: () => void;
 }
 
-export default function Button({ text, className, onClick }: ButtonProps) {
+export default function StyledButton({ text, className, onClick }: ButtonProps): JSX.Element {
   return (
     <div>
       <button
@@ -18,3 +16,4 @@ export default function Button({ text, className, onClick }: ButtonProps) {
     </div>
   );
 }
+

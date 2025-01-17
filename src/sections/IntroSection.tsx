@@ -1,5 +1,5 @@
 import landing from "../assets/landing.png";
-import Button from "../components/button";
+import Button from "../components/StyledButton";
 
 const IntroSection = () => {
   return (
