@@ -92,7 +92,7 @@ export default function NavBar() {
                   isActive
                     ? "text-yellow font-bold bg-darkBlue md:bg-transparent"
                     : "text-white hover:text-yellow hover:bg-darkBlue md:hover:bg-transparent"
-                } w-full block p-6 h-[calc(25vh-20px)] md:p-4 md:h-auto md:w-auto md:block text-xl font-bold md:text-base md:font-body align-middle`
+                } w-full block p-6 h-[calc(25vh-40px)] md:p-4 md:h-auto md:w-auto md:block text-xl font-bold md:text-base md:font-body align-middle`
               }
             >
                 <div className="flex h-full justify-center items-center">
