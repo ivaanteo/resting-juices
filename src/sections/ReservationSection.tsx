@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Reservations() {
   return (
     <section className="bg-darkPurple h-screen">
