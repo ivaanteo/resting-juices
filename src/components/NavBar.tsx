@@ -35,7 +35,7 @@ export default function NavBar() {
 
   return (
     <div
-      className={`w-full top-0 z-50 fixed flex flex-col md:flex-row justify-between `}
+      className={`w-full top-0 z-50 fixed flex flex-col md:flex-row justify-between bg-opacity-20 bg-black md:items-center`}
     >
       <div
         className={`justify-between flex flex-row px-8 py-6 transition-all ease-in-out duration-[500ms] ${
@@ -60,29 +60,36 @@ export default function NavBar() {
           )}
         </button>
       </div>
-      <div className={`flex flex-col md:flex-row md:bg-none md:gap-4 md:pr-8`}>
+      <div
+        className={`transition-all duration-[500ms] ease-in-out ${
+          isMenuOpen ? "" : "h-0"
+        } flex-col flex md:flex-row md:bg-none md:gap-4 md:pr-8 md:py-0 md:items-center`}
+        style={{ transitionDelay: `${tabs.length * 100}ms` }}
+      >
         {tabs.map((tab: Tab, index: number) => (
-          <button
-            key={index}
-            // Note: tailwind only allows for static values in transitionDelay
-            style={{ transitionDelay: `${index * 100}ms` }}
-            className={`transition-all duration-[500ms] ease-in-out md:translate-x-0 ${
-              isMenuOpen ? "translate-x-0" : "-translate-x-full"
-            } p-4 md:bg-transparent md:border-none bg-darkPurple border-t-[1px] border-white md:text-white `}
-            // Dismiss on click
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <NavLink
-              to={tab.path}
-              className={({ isActive }) =>
+          <NavLink
+            to={tab.path}
+            className={({ isActive }) =>
+              `${
                 isActive
                   ? "text-yellow font-bold"
                   : "text-white hover:text-yellow"
-              }
+              }`
+            }
+          >
+            <button
+              key={index}
+              // Note: tailwind only allows for static values in transitionDelay
+              style={{ transitionDelay: `${index * 100}ms` }}
+              className={`transition-all duration-[500ms] ease-in-out md:translate-x-0 ${
+                isMenuOpen ? "translate-x-0" : "-translate-x-full"
+              } md:bg-transparent md:border-none bg-darkPurple border-t-[1px] border-white md:text-white p-6 w-full`}
+              // Dismiss on click
+              onClick={() => setIsMenuOpen(false)}
             >
               {tab.text}
-            </NavLink>
-          </button>
+            </button>
+          </NavLink>
         ))}
       </div>
     </div>
