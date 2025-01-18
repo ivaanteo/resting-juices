@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { NavLink } from "react-router";
+
+interface Tab {
+  text: string;
+  path: string;
+}
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState<Boolean>(false);
@@ -8,7 +14,12 @@ export default function NavBar() {
     setIsMenuOpen((prev: Boolean) => !prev);
   };
 
-  const tabs: string[] = ["about", "projects", "menu", "reserve"];
+  const tabs: Tab[] = [
+    { text: "about", path: "/about" },
+    { text: "projects", path: "/projects" },
+    { text: "menu", path: "/menu" },
+    { text: "reserve", path: "/reserve" },
+  ];
 
   // listen to screen width and close menu if > 764px
   useEffect(() => {
@@ -32,7 +43,14 @@ export default function NavBar() {
         }`}
       >
         <button>
-          <h3 className={`text-white`}>resting juices.</h3>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? `text-yellow` : `text-white`
+            }
+          >
+            <h3 className={`text-white`}>resting juices.</h3>
+          </NavLink>
         </button>
         <button onClick={toggleMenu}>
           {isMenuOpen ? (
@@ -43,16 +61,27 @@ export default function NavBar() {
         </button>
       </div>
       <div className={`flex flex-col md:flex-row md:bg-none md:gap-4 md:pr-8`}>
-        {tabs.map((tab: string, index: number) => (
+        {tabs.map((tab: Tab, index: number) => (
           <button
             key={index}
             // Note: tailwind only allows for static values in transitionDelay
             style={{ transitionDelay: `${index * 100}ms` }}
             className={`transition-all duration-[500ms] ease-in-out md:translate-x-0 ${
               isMenuOpen ? "translate-x-0" : "-translate-x-full"
-            } p-4 md:bg-transparent md:border-none bg-darkPurple hover:text-yellow text-white  border-t-[1px] border-white md:text-white `}
+            } p-4 md:bg-transparent md:border-none bg-darkPurple border-t-[1px] border-white md:text-white `}
+            // Dismiss on click
+            onClick={() => setIsMenuOpen(false)}
           >
-            {tab}
+            <NavLink
+              to={tab.path}
+              className={({ isActive }) =>
+                isActive
+                  ? "text-yellow font-bold"
+                  : "text-white hover:text-yellow"
+              }
+            >
+              {tab.text}
+            </NavLink>
           </button>
         ))}
       </div>
