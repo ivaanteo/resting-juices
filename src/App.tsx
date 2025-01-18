@@ -4,6 +4,7 @@ import IntroSection from "./sections/IntroSection";
 import MenuSection from "./sections/MenuSection";
 
 function App() {
+
   return (
     <>
       <IntroSection />
