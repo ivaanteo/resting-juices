@@ -9,19 +9,19 @@ import Button from "../components/StyledButton";
 const IntroSection = () => {
   return (
     <section>
-      <div className="flex flex-col md:flex-row-reverse bg-lightBlue">
+      <div className="flex flex-col-reverse md:flex-row-reverse bg-lightBlue">
         <div className="flex flex-col justify-center pb-24 pt-32 px-16 md:min-w-96 md:flex-grow">
           <h1 className="text-darkBlue">hello, i'm azure</h1>
           <p className="text-darkBlue mt-4">
             I'm a private chef based in Singapore.
           </p>
 
-          <NavLink to="/reserve">
+          <NavLink to="/reserve" className={"w-fit"}>
             <Button
               text="reserve me"
               className="bg-darkBlue text-lightBlue hover:bg-darkPurple transition-all mt-4 transform hover:scale-105 duration-300 ease-in-out"
               onClick={() => console.log("View Menu clicked!")}
-            />
+            ></Button>
           </NavLink>
         </div>
         <div className="flex flex-col justify-center text-center md:max-w-[764px]">
