@@ -4,7 +4,7 @@ import Button from "../components/StyledButton";
 export default function DiningSection() {
   return (
     <section>
-      <div className="flex flex-col lg:flex-row lg:justify-center bg-lightPink py-12">
+      <div className="flex flex-col md:flex-row md:justify-center bg-lightPink py-12">
         <div className="flex flex-col justify-center text-right py-8 px-16">
           <h1 className="text-darkGreen">how to dine</h1>
           <p className="text-darkGreen mt-4">
@@ -23,7 +23,7 @@ export default function DiningSection() {
             onClick={() => console.log("View Menu clicked!")}
           />
         </div>
-        <div className="flex flex-col justify-center bg-red-500 text-center lg:max-w-[512px]">
+        <div className="flex flex-col justify-center bg-red-500 text-center md:max-w-[512px]">
           <img src={wine} alt="Wine" className="w-full" />
         </div>
       </div>

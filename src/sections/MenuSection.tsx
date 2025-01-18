@@ -4,7 +4,7 @@ import Button from "../components/StyledButton";
 export default function MenuSection() {
   return (
     <section>
-      <div className="flex flex-col lg:flex-row-reverse lg:justify-center bg-lightGreen py-12">
+      <div className="flex flex-col md:flex-row-reverse md:justify-center bg-lightGreen py-12">
         <div className="flex flex-col justify-center text-left py-8 px-16">
           <h1 className="text-darkPurple">menu</h1>
           <p className="text-darkPurple mt-4">
@@ -18,7 +18,7 @@ export default function MenuSection() {
             onClick={() => console.log("View Menu clicked!")}
           />
         </div>
-        <div className="flex flex-col justify-center text-center lg:max-w-[764px] py-8 px-16">
+        <div className="flex flex-col justify-center text-center md:max-w-[764px] py-8 px-16">
           <img src={menuGroup} alt="menu" className="w-full" />
         </div>
       </div>

@@ -1,3 +1,4 @@
+import NavBar from "./components/NavBar";
 import ContactSection from "./sections/ContactSection";
 import DiningSection from "./sections/DiningSection";
 import IntroSection from "./sections/IntroSection";
@@ -7,6 +8,7 @@ function App() {
 
   return (
     <>
+      <NavBar />
       <IntroSection />
       <DiningSection />
       <MenuSection />
