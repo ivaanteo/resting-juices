@@ -11,10 +11,12 @@ createRoot(document.getElementById("root")!).render(
     <BrowserRouter>
       <NavBar />
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="*" element={<App />} />
         <Route
           path="/about"
-          element={<div className="bg-darkPurple h-screen text-white">About</div>}
+          element={
+            <div className="bg-darkPurple h-screen text-white">About</div>
+          }
         />
         <Route path="/reserve" element={<Reservations />} />
         <Route
@@ -25,7 +27,9 @@ createRoot(document.getElementById("root")!).render(
         />
         <Route
           path="/menu"
-          element={<div className="bg-darkPurple h-screen text-white">Menu</div>}
+          element={
+            <div className="bg-darkPurple h-screen text-white">Menu</div>
+          }
         />
       </Routes>
     </BrowserRouter>

@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import wine from "../assets/wine.jpeg";
 import Button from "../components/StyledButton";
 
@@ -17,11 +18,13 @@ export default function DiningSection() {
           <p className="text-darkGreen">
             All you need to bring is your appetite!
           </p>
-          <Button
-            text="reserve me"
-            className="bg-darkGreen text-lightPink hover:bg-darkPurple transition-all mt-4 transform hover:scale-105 duration-300 ease-in-out"
-            onClick={() => console.log("View Menu clicked!")}
-          />
+          <NavLink to="/reserve">
+            <Button
+              text="reserve me"
+              className="bg-darkGreen text-lightPink hover:bg-darkPurple transition-all mt-4 transform hover:scale-105 duration-300 ease-in-out"
+              onClick={() => console.log("View Menu clicked!")}
+            />
+          </NavLink>
         </div>
         <div className="flex flex-col justify-center bg-red-500 text-center md:max-w-[512px]">
           <img src={wine} alt="Wine" className="w-full" />
